@@ -6,6 +6,18 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <section className="relative pt-[220px] pb-[160px] px-8 min-h-[90vh] flex items-center overflow-hidden rounded-br-[200px] lg:rounded-br-[400px]">
+      {/* Star Icon */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
+        className="absolute left-[57%] top-[40%] -translate-y-1/2 z-20 hidden lg:block"
+      >
+        <svg width="60" height="60" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 0C32 17.673 17.673 32 0 32C17.673 32 32 46.327 32 64C32 46.327 46.327 32 64 32C46.327 32 32 17.673 32 0Z" fill="#050505" />
+        </svg>
+      </motion.div>
+
       <div className="max-w-[1400px] w-full mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10">
 
         {/* Left Content */}
@@ -14,7 +26,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-[60px] lg:text-[140px] font-bold leading-[0.95] tracking-tight text-dark"
+            className="text-[40px] lg:text-[140px] font-bold leading-[0.95] tracking-tight text-dark"
           >
             Ready.<br />
             Get set.<br />
@@ -24,7 +36,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-xl lg:text-[22px] leading-[1.6] max-w-[460px] text-dark font-medium"
+            className="text-xl lg:text-[22px] leading-[1.6] max-w-[570px] text-dark font-medium"
           >
             Trusted Paid Media and Conversion agency – we amplify growth across the whole paid journey.
           </motion.p>

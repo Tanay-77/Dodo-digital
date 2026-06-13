@@ -3,71 +3,128 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 
-const testimonials = [
+const topRowTestimonials = [
   {
     quote: "We've leaned on their experience to guide our user acquisition strategy. We trust them.",
     name: "Kim Palmer",
-    role: "Founder @ Clementine App",
-    avatar: "https://picsum.photos/seed/t1/100/100"
+    role: "Founder @ ",
+    company: "Clementine App",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
   },
   {
     quote: "Dodo are genuinely honest guys and have been pivotal to our growth.",
     name: "Jamie Hodgson",
-    role: "CBO @ Antibody Analytics",
-    avatar: "https://picsum.photos/seed/t2/100/100"
+    role: "CBO @ ",
+    company: "Antibody Analytics",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
   },
   {
     quote: "It's been an absolute pleasure working with Dodo Digital - we look forward to a long-term partnership.",
     name: "Lou Alderson",
-    role: "Co-Founder @ So Syncd",
-    avatar: "https://picsum.photos/seed/t3/100/100"
+    role: "Co-Founder @ ",
+    company: "So Syncd",
+    avatar: "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    quote: "It's been an absolute pleasure working with Dodo Digital - we look forward to a long-term partnership.",
+    name: "Lou Alderson",
+    role: "Co-Founder @ ",
+    company: "So Syncd",
+    avatar: "https://randomuser.me/api/portraits/women/12.jpg"
+  }
+];
+
+const bottomRowTestimonials = [
+  {
+    quote: "I can tell they really care about our business, we've really benefited working with specialists.",
+    name: "James Collins",
+    role: "Director @ ",
+    company: "Studio Innate",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     quote: "They beat their own forecasts by a factor of 3. I have no hesitation in recommending them.",
     name: "Juliet Lecchini",
-    role: "Marketing Director @ Ricardo PLC",
-    avatar: "https://picsum.photos/seed/t4/100/100"
+    role: "Marketing Director @ ",
+    company: "Ricardo PLC",
+    avatar: "https://randomuser.me/api/portraits/women/65.jpg"
+  },
+  {
+    quote: "We moved from a big 6 agency to Dodo, they care and implement strategies that work",
+    name: "Dan Evans",
+    role: "Marketing Manager @ ",
+    company: "Salad Money",
+    avatar: "https://randomuser.me/api/portraits/men/15.jpg"
+  },
+  {
+    quote: "We moved from a big 6 agency to Dodo, they care and implement strategies that work",
+    name: "Dan Evans",
+    role: "Marketing Manager @ ",
+    company: "Salad Money",
+    avatar: "https://randomuser.me/api/portraits/men/15.jpg"
   }
 ];
 
+function TestimonialCard({ t }: { t: any }) {
+  return (
+    <div className="bg-[#F6F6F6] rounded-[24px] p-8 flex flex-col justify-between w-[350px] md:w-[420px] shrink-0 h-[220px]">
+      <p className="text-[15px] leading-[1.6] font-medium text-dark">
+        {t.quote}
+      </p>
+      <div className="flex items-center gap-4 mt-6">
+        <div className="w-12 h-12 rounded-full overflow-hidden relative shrink-0">
+          <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+        <div>
+          <div className="font-bold text-[15px] text-dark">{t.name}</div>
+          <div className="text-[13px] font-bold text-dark">
+            {t.role}
+            <span className="text-[#FF4675]">{t.company}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function TestimonialGrid() {
   return (
-    <section className="py-[140px] px-8 max-w-[1400px] mx-auto w-full">
+    <section className="py-24 w-full overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-4xl mx-auto mb-20"
+        className="text-center max-w-[800px] mx-auto mb-16 px-6"
       >
-        <h2 className="text-[40px] md:text-[56px] font-black leading-[1.1] tracking-tight">
-          We get behind brands we think deserve to grow, win more market share and be major players in their area.
+        <h2 className="text-[28px] md:text-[36px] font-bold leading-[1.3] text-dark">
+          We get behind brands we think deserve to grow, win more
+          market share and be major players in their area.
         </h2>
       </motion.div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            whileHover={{ y: -8, transition: { duration: 0.2 } }}
-            className="bg-card rounded-[32px] p-8 flex flex-col justify-between"
-          >
-            <p className="text-xl leading-[1.6] font-medium mb-12 text-text-primary">"{t.quote}"</p>
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full overflow-hidden relative shrink-0">
-                <Image src={t.avatar} alt={t.name} fill className="object-cover" referrerPolicy="no-referrer" />
-              </div>
-              <div>
-                <div className="font-bold text-lg">{t.name}</div>
-                <div className="text-sm text-text-secondary font-medium">{t.role}</div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+
+      <div className="flex flex-col gap-6 relative w-full left-1/2 -translate-x-1/2 w-[110vw]">
+        {/* Top Row Marquee */}
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+          className="flex gap-6 w-max"
+        >
+          {[...topRowTestimonials, ...topRowTestimonials].map((t, i) => (
+            <TestimonialCard key={i} t={t} />
+          ))}
+        </motion.div>
+
+        {/* Bottom Row Marquee */}
+        <motion.div
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+          className="flex gap-6 w-max ml-[-200px]"
+        >
+          {[...bottomRowTestimonials, ...bottomRowTestimonials].map((t, i) => (
+            <TestimonialCard key={i} t={t} />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
