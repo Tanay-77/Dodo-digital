@@ -5,11 +5,26 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
 const faqs = [
-  { q: "Lorem ipsum dolor sit amet?", a: "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-  { q: "Lorem ipsum dolor sit amet?", a: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident." },
-  { q: "Lorem ipsum dolor sit amet?", a: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium." },
-  { q: "Lorem ipsum dolor sit amet?", a: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt." },
-  { q: "Lorem ipsum dolor sit amet?", a: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore." }
+  { 
+    q: "What services do you specialise in?", 
+    a: "We specialise in paid media, growth strategy, SEO, and conversion rate optimization (CRO). Our goal is to scale your business effectively through data-driven campaigns." 
+  },
+  { 
+    q: "How long does it take to see results?", 
+    a: "While some quick wins can be seen within the first 30 days, we typically recommend a 3-month timeframe to fully gather data, optimise campaigns, and see significant, sustainable growth." 
+  },
+  { 
+    q: "Do you work with startups or established businesses?", 
+    a: "Both! Whether you're a funded startup looking for rapid user acquisition or an established brand aiming to improve your return on ad spend, we tailor our framework to your specific growth stage." 
+  },
+  { 
+    q: "How do you handle communication and reporting?", 
+    a: "Transparency is key. Your dedicated account manager will set up a direct Slack channel for daily comms, provide weekly performance snapshots, and host a deep-dive strategy call every month." 
+  },
+  { 
+    q: "What makes your agency different from others?", 
+    a: "We don't just generate traffic; we optimise the full funnel. Our team has deep in-house experience, meaning we understand the commercial realities of your business beyond just vanity metrics." 
+  }
 ];
 
 export function FAQ() {

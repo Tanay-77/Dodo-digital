@@ -27,10 +27,10 @@ const topRowTestimonials = [
   },
   {
     quote: "It's been an absolute pleasure working with Dodo Digital - we look forward to a long-term partnership.",
-    name: "Lou Alderson",
+    name: "Tanay Mahajan",
     role: "Co-Founder @ ",
-    company: "So Syncd",
-    avatar: "https://randomuser.me/api/portraits/women/12.jpg"
+    company: "Grad18",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   }
 ];
 

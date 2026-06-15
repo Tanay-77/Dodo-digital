@@ -12,7 +12,7 @@ export function Process() {
   return (
     <section id="process" className="bg-beige py-[140px] px-8 w-full overflow-hidden">
       <div className="max-w-[1200px] mx-auto text-center relative">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,9 +30,14 @@ export function Process() {
           We use a proven framework of research, testing, validating and scaling to maximise growth across the whole paid journey. Whether paid ads are new to your business or not.
         </motion.p>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Subtle dashed connection lines for desktop only to keep it simple and responsive */}
-          <div className="hidden md:block absolute top-[120px] left-[20%] right-[20%] h-0 border-t border-dashed border-pink/50 z-0"></div>
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          {/* Subtle dashed connection lines for desktop only */}
+          <div className="hidden md:block absolute top-[80px] left-[16.66%] right-[16.66%] z-0 text-pink">
+            <svg width="100%" height="100%" style={{ overflow: 'visible' }}>
+              <line x1="0" y1="60" x2="50%" y2="0" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8" />
+              <line x1="50%" y1="0" x2="100%" y2="60" stroke="currentColor" strokeWidth="2" strokeDasharray="8 8" />
+            </svg>
+          </div>
 
           {steps.map((step, i) => (
             <motion.div
@@ -41,12 +46,14 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
-              className={`rounded-[32px] p-10 text-left relative z-10 min-h-[380px] flex flex-col ${step.isAccent ? 'bg-pink text-white' : 'bg-white'}`}
+              className={`rounded-[32px] p-10 text-left relative z-10 min-h-[380px] flex flex-col ${step.isAccent ? 'bg-pink text-white' : 'bg-white'
+                } ${i === 1 ? 'md:mt-0' : 'md:mt-[60px]'
+                }`}
             >
               {step.isAccent && (
-                <div className="absolute -top-10 -right-4">
+                <div className="absolute -top-6 -right-2">
                   <svg width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 0L29.2984 18.7016L48 24L29.2984 29.2984L24 48L18.7016 29.2984L0 24L18.7016 18.7016L24 0Z" fill="#050505"/>
+                    <path d="M24 0 Q 24 24 48 24 Q 24 24 24 48 Q 24 24 0 24 Q 24 24 24 0 Z" fill="#050505" />
                   </svg>
                 </div>
               )}
@@ -55,7 +62,7 @@ export function Process() {
               </div>
               <h3 className={`text-2xl font-bold mb-6 ${step.isAccent ? 'text-white' : 'text-dark'}`}>{step.title}</h3>
               <p className={`text-lg leading-[1.6] mb-8 ${step.isAccent ? 'text-white/90' : 'text-text-secondary'}`}>{step.desc}</p>
-              
+
               {step.action && (
                 <div className="mt-auto">
                   <button className="bg-dark text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform duration-300">
